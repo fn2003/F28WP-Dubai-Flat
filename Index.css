@@ -7,4 +7,20 @@
   display: flex; 
   justify-content: space-around;
 }
+
+#gameWindow {
+
+  background-color: rgb(44, 83, 190);
+  border-style: solid;
+  margin-left: 450px;
+  margin-right: 450px;
+  width: 75%;
+  position: relative;
+  left: 175px;
+  height: 500px;
+  margin: 20px;
+
+
+}
+
   
