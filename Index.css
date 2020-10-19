@@ -1,1 +1,10 @@
-
+#Title {
+  background-color: rgb(255, 0, 0);
+  border-style: solid;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin: 20px;
+  display: flex; 
+  justify-content: space-around;
+}
+  
