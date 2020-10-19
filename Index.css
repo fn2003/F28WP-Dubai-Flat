@@ -24,3 +24,13 @@
 }
 
   
+#aboutWindow {
+
+  background-color: rgb(158, 0, 145);
+  border-style: solid;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin: 20px;
+  height: 50px;
+
+}
