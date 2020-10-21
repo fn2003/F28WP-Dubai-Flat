@@ -1,9 +1,9 @@
 #Title {
   background-color: rgb(255, 0, 0);
+  border-color: red;
   border-style: solid;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin: 20px;
+  height: 100%;
+  width:100%;
   display: flex; 
   justify-content: space-around;
 }
@@ -17,23 +17,12 @@
   width: 75%;
   position: relative;
   left: 175px;
-  height: 500px;
+  height: 550px;
   margin: 20px;
 
 
 }
 
-  
-#aboutWindow {
-
-  background-color: rgb(158, 0, 145);
-  border-style: solid;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin: 20px;
-  height: 50px;
-
-}
 
 #foot
 {
@@ -53,7 +42,10 @@
   font-size: 16px;
 }
 
-div {
+#container {
   background-color: black;
- 
+}
+
+body {
+  background-color: black;
 }
