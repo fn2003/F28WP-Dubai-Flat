@@ -1,0 +1,19 @@
+#gameWindow {
+    margin-left: 450px;
+    margin-right: 450px;
+    top: 60px;
+    width: 75%;
+    position: relative;
+    left: 175px;
+    height: 550px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+canvas {
+    width: 1000px;
+    height: 1000px;
+    background-color: rgb(158, 52, 52);
+   
+
+}
