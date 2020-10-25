@@ -1,30 +1,3 @@
-/*playerSpeed = 10;
-document.onkeydown = detectKey;
-function detectKey(posKey) {
-    var posLeft = document.getElementById('canvas').offsetLeft;
-    var posTop = document.getElementById('canvas').offsetTop;
-    posKey = posKey || window.event;
-    if (posKey.keyCode == '38') {
-        // up arrow
-        document.getElementById('canvas').style.marginTop  = (posTop-playerSpeed)+"px";
-    }
-    else if (posKey.keyCode == '40') {
-        // down arrow
-        document.getElementById('canvas').style.marginTop  = (posTop+playerSpeed)+"px";
-    }
-    else if (posKey.keyCode == '37') {
-       // left arrow
-        document.getElementById('canvas').style.marginLeft = (posLeft-playerSpeed)+"px";
-    }
-    else if (posKey.keyCode == '39') {
-       // right arrow
-        document.getElementById('canvas').style.marginLeft  = (posLeft+playerSpeed)+"px";
-    }
-}
-*/
-
-
-
 function main() {
 
     var gameState;
