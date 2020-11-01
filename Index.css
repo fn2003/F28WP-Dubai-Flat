@@ -1,6 +1,6 @@
 #Title {
-  background-color: rgb(255, 0, 0);
-  border-color: red;
+  background-color: rgb(170, 170, 170);
+  border-color: rgb(170, 170, 170);
   border-style: solid;
   height: 100%;
   width:100%;
@@ -9,8 +9,6 @@
 }
 
 #gameWindow {
-
-  background-color: rgb(44, 83, 190);
   border-style: solid;
   margin-left: 450px;
   margin-right: 450px;
@@ -22,7 +20,6 @@
 
 
 }
-
 
 #foot
 {
@@ -43,9 +40,9 @@
 }
 
 #container {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 body {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }

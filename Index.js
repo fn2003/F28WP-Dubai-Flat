@@ -7,7 +7,7 @@ function main() {
 
     // initializer function
     function init() {
-        gameState = 0
+        gameState = 1
         gameOver = false
     }
 
@@ -44,8 +44,11 @@ function main() {
 
     // game update function
     function update() {
+        gameStateManager()
 
     }
+
+    update()
 }
 
 main()

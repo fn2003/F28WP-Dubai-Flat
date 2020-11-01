@@ -1,6 +1,6 @@
 export default class Player {
 
-    constructor(DOMElement, xInit, yInit) {
+    constructor(xInit, yInit) {
         this.DOMElement = DOMElement;
         document.body.appendChild(this.DOMElement)
 
@@ -84,7 +84,6 @@ export default class Player {
             window.addEventListener('keydown', doKeyDown)
         }
     }
-
     
 }
     
