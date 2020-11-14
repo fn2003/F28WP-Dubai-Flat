@@ -1,9 +1,10 @@
 # F28WP-Dubai-Flat
 Coursework for Semester 1, F28WP course
 This is a web-game where:
-- Players are put into a map where they can only traverse through laser paths created by laser generators.
-- The goal of the player is to survive for the longest period of time 
-- They can do this by eliminating other players present on the map by attacking them, or changing laser generator directions
+- The player is put onto a map and must avoid oncoming projectiles as long as they can 
+- Players can avoid them by the arrow keys
+
 
 
 #Update 21/10/20: Added base-game JS script and functionalities
+#Update 14/11/20: Changed game idea and added: projectile spawning, projectile asset
