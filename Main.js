@@ -5,7 +5,7 @@ function projSpawner() {
     this.timer = 200;
 }
 
-// function to start the projectile spawning. ****Recommened that this function is called in init****
+// function to start the projectile spawning.
 projSpawner.prototype.start = function() {
     setInterval(function(){
         let check = (randomize(-100, 1050));
