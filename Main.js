@@ -54,4 +54,3 @@ projSpawn.start();
 // Helper function to randomize value
 function randomize(min, max) {
     return (Math.floor(Math.random() * (max - min) ) + min);
-}
