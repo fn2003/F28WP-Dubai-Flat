@@ -13,7 +13,7 @@ export default class Player {
     display() {
         this.fitBounds();
         this.htmlElement.style.left = this.x + "px";
-        this.htmlElement.style.top = (this.htmlElement.parentElement.offsetHeight - this.htmlElement.offsetHeight) + "px";
+        this.htmlElement.style.top = (document.getElementById("gameWindow").offsetHeight - this.htmlElement.offsetHeight) + "px";
         this.htmlElement.style.display = "block";
     }
 

@@ -9,7 +9,6 @@
 }
 
 #gameWindow {
-  background-color: #f5d8d8;
   width: 1100px;
   position: relative;
   left: 175px;
@@ -46,12 +45,11 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-#player {
-  position: absolute;
-  left: 100px;
-  /*top: 240px;*/
-  width: 150px;
-  height: 160px
+#map {
+  background-color: #f5d8d8;
+  height: 1000px;
+  width: 1200px; 
+  
 }
 
 #projectile{
@@ -60,5 +58,13 @@ body {
   height:100px;
   position:absolute;
   background-color: #1d0404;
+  
+}
 
+#player {
+  position: absolute;
+  left: 100px;
+  /*top: 240px;*/
+  width: 150px;
+  height: 160px
 }
