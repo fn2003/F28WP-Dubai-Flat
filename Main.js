@@ -23,11 +23,10 @@ function projectile(xPos){
 
     // creates projectile element on the html side
     let projectile = $('<img />', { 
-        id: '#projectile',
+        id: 'projectile',
         src: './Images/FLat01.png',
         alt: 'Proj'
       });
-    
     //sets projectiles position and generates it on the map element
     projectile = projectile.css({"position":"absolute", "top":0, "left":xPos})
     $("#map").prepend(projectile)
@@ -37,11 +36,16 @@ function projectile(xPos){
         let topP = Number(projectile.css("top").replace("px",""));
     */
     
-    
     //updates projectile's position every 10ms
     let interval = setInterval(function(){
+        //current keeps track of player position
         current += velocity;
         projectile = projectile.css({"top":current})
+        //If position is below game window, interval is stopped and element is deleted
+        if(current > 600) {
+            clearInterval(interval);
+            projectile.remove();
+        }
     },10);
 }
 
@@ -60,6 +64,7 @@ function randomize(min, max) {
 import Player from "./Classes/Player.js"
 
 var player = new Player();
+player.spawn();
 
 function keyDownHandler(e) {
     if (e.keyCode == 39) {

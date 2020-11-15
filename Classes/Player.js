@@ -1,15 +1,38 @@
 export default class Player {
     constructor() {
-        this.dPlayer = 100;
-        this.htmlElement = document.getElementById("player");
-        this.x = this.htmlElement.offsetLeft;;
+        //player attributes
+        this.speed= 100;
+        this.initPos = (($("#gameWindow").width())/2)-150/2;
+        this.htmlElement;
+        this.x;
+        // creates html element for the player
+        this.handle = $('<img />', { 
+            id: 'player',
+            src: './Images/Player.gif',
+            alt: 'Player'
+          });        
     }
 
+    //spawns the player. ****call in init****
+    spawn() {
+        //set player's element position and creates it on screen
+        this.handle = this.handle.css({"position":"absolute", "top":0, "left":this.initPos});
+        $("#map").prepend(this.handle);
+
+        //DOM used for player movement
+        this.htmlElement = document.getElementById("player");
+        this.x = this.htmlElement.offsetLeft;;
+        //initial top position changed
+        this.htmlElement.style.top = (document.getElementById("gameWindow").offsetHeight - this.htmlElement.offsetHeight) + "px";
+    }
+
+    //moves the player. Call in update
     move(xDir) {
-        this.x += this.dPlayer * xDir;
+        this.x += this.speed * xDir;
         this.display();
     } 
 
+    //updates player position. Called in move
     display() {
         this.fitBounds();
         this.htmlElement.style.left = this.x + "px";

@@ -52,14 +52,6 @@ body {
   
 }
 
-#projectile{
-  
-  width: 100px;
-  height:100px;
-  position:absolute;
-  background-color: #1d0404;
-  
-}
 
 #player {
   position: absolute;
