@@ -76,3 +76,31 @@ function keyDownHandler(e) {
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
+
+function isHit(defender, offender) {
+    if (cross(defender, offender)) {
+        console.log("Player got hit");
+    }
+}
+
+function cross(element1, element2) {
+    let left1 = element1.offsetLeft;
+    let top1 = element1.offsetTop;
+    let right1 = element1.offsetLeft + element1.offsetWidth;
+    let bottom1 = element1.offsetTop + element1.offsetHeight;
+
+    let left2 = element2.htmlElement.offsetLeft;
+    let top2 = element2.htmlElement.offsetTop;
+    let right2 = element2.htmlElement.offsetLeft + element2.htmlElement.offsetWidth;
+    let bottom2 = element2.htmlElement.offsetTop + element2.htmlElement.offsetHeight;
+
+    let x_overlap = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
+    let y_overlap = Math.max(0, Math.min(bottom1, bottom2) - Math.max(top1, top2));
+    let overlapArea = x_overlap * y_overlap;
+
+    if (overlapArea == 0 || isNaN(overlapArea)) {
+        return false;
+    }
+    return true;
+
+}
