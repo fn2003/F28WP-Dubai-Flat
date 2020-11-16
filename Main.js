@@ -42,6 +42,9 @@ function projectile(xPos){
         current += velocity;
         projectile = projectile.css({"top":current})
         //If position is below game window, interval is stopped and element is deleted
+        //Checks collision
+        isHit(projectile, player);
+        
         if(current > 600) {
             clearInterval(interval);
             projectile.remove();
@@ -49,11 +52,7 @@ function projectile(xPos){
     },10);
 }
 
-//Creates an object from projSpawner
-let projSpawn = new projSpawner();
-/*This is to be called when starting projectile spawning 
-    ****Call this in the init function**** */
-projSpawn.start();
+
 
 // Helper function to randomize value
 function randomize(min, max) {
@@ -65,6 +64,12 @@ import Player from "./Classes/Player.js"
 
 var player = new Player();
 player.spawn();
+
+//Creates an object from projSpawner
+let projSpawn = new projSpawner();
+/*This is to be called when starting projectile spawning 
+    ****Call this in the init function**** */
+projSpawn.start();
 
 function keyDownHandler(e) {
     if (e.keyCode == 39) {
@@ -84,10 +89,10 @@ function isHit(defender, offender) {
 }
 
 function cross(element1, element2) {
-    let left1 = element1.offsetLeft;
-    let top1 = element1.offsetTop;
-    let right1 = element1.offsetLeft + element1.offsetWidth;
-    let bottom1 = element1.offsetTop + element1.offsetHeight;
+    let left1 = element1.offset().left;
+    let top1 = element1.offset().top;
+    let right1 = left1 + element1.width();
+    let bottom1 = top1 + element1.height();
 
     let left2 = element2.htmlElement.offsetLeft;
     let top2 = element2.htmlElement.offsetTop;
