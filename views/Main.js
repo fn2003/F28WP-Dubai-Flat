@@ -2,7 +2,7 @@ console.log("Program has started")
 
 // Class that spawns the projectiles
 function projSpawner() {
-    this.timer = 200;
+    this.timer = 1000;
 }
 
 // function to start the projectile spawning. ****Recommened that this function is called in init****
@@ -18,7 +18,7 @@ projSpawner.prototype.start = function() {
 //projectile is a child function/class of projSpawner
 function projectile(xPos){
     //Projectile speed and position accumulator
-    let velocity = 10;
+    let velocity = 5;
     let current = 0
 
     // creates projectile element on the html side
@@ -93,15 +93,20 @@ function cross(element1, element2) {
     let top1 = element1.offset().top;
     let right1 = left1 + element1.width();
     let bottom1 = top1 + element1.height();
+    
 
     let left2 = element2.htmlElement.offsetLeft;
     let top2 = element2.htmlElement.offsetTop;
     let right2 = element2.htmlElement.offsetLeft + element2.htmlElement.offsetWidth;
     let bottom2 = element2.htmlElement.offsetTop + element2.htmlElement.offsetHeight;
 
+    
+
     let x_overlap = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
     let y_overlap = Math.max(0, Math.min(bottom1, bottom2) - Math.max(top1, top2));
     let overlapArea = x_overlap * y_overlap;
+
+    console.log(left1+" "+left2)
 
     if (overlapArea == 0 || isNaN(overlapArea)) {
         return false;

@@ -1,0 +1,27 @@
+{
+  "name": "F28WP-Dubai-Flat",
+  "version": "1.0.0",
+  "description": "Coursework for Semester 1, F28WP course\r This is a web-game where:\r - The player is put onto a map and must avoid oncoming projectiles as long as they can \r - Players can avoid them by the arrow keys",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F28WP-Dubai-FLAT/F28WP-Dubai-Flat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F28WP-Dubai-FLAT/F28WP-Dubai-Flat/issues"
+  },
+  "homepage": "https://github.com/F28WP-Dubai-FLAT/F28WP-Dubai-Flat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "socket.io": "^3.0.1"
+  }
+}

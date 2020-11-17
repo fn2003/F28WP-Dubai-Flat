@@ -7,7 +7,7 @@ const app = express();
 //allowing static file send from folder "views"
 app.use(express.static('views'));
  
-//sendin ghte index html file
+//sending the index html file
 app.get('/', function(request, response) {
     response.sendFile('Index.html', { root: __dirname });
 });
