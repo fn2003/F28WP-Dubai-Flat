@@ -5,10 +5,11 @@ export default class Player {
         this.initPos = (($("#gameWindow").width())/2)-150/2;
         this.htmlElement;
         this.x;
+
         // creates html element for the player
         this.handle = $('<img />', { 
             id: 'player',
-            src: './Images/Player.gif',
+            src: './Images/Flat02.png',
             alt: 'Player'
           });        
     }
@@ -35,6 +36,7 @@ export default class Player {
     //updates player position. Called in move
     display() {
         this.fitBounds();
+
         this.htmlElement.style.left = this.x + "px";
         this.htmlElement.style.top = (document.getElementById("gameWindow").offsetHeight - this.htmlElement.offsetHeight) + "px";
         this.htmlElement.style.display = "block";

@@ -1,7 +1,7 @@
 console.log("Program has started")
 
 // Global values
-let spawnStop = false;
+let spawnStop;
 let gameOver = false;
 let score = 0;
 
@@ -12,10 +12,9 @@ function projSpawner() {
 
 // function to start the projectile spawning. ****Recommened that this function is called in init****
 projSpawner.prototype.start = function() {
+    spawnStop = false;
     var spawn = setInterval(function(){
-        let check = (randomize(-100, 1050));
-        if(check<=0)
-            check = 0;
+        let check = (randomize(-100, 1100));
         projectile(check);
         if(spawnStop)
             clearInterval(spawn);
@@ -31,6 +30,7 @@ function projectile(xPos){
     //Projectile speed and position accumulator
     let velocity = 7;
     let current = 0
+    let width = $("#gameWindow").width();
 
     // creates projectile element on the html side
     let projectile = $('<img />', { 
@@ -38,8 +38,15 @@ function projectile(xPos){
         src: './Images/FLat01.png',
         alt: 'Proj'
       });
+
+    if(xPos <= 0)
+        xPos = 0;
+    if(xPos >= width - 95)
+        xPos = width - 95;
+
     //sets projectiles position and generates it on the map element
     projectile = projectile.css({"position":"absolute", "top":0, "left":xPos})
+    
     if(!spawnStop)
         $("#map").prepend(projectile)
     
