@@ -6,5 +6,6 @@ This is a web-game where:
 
 
 
-# Update 21/10/20: Added base-game JS script and functionalities
-# Update 14/11/20: Changed game idea and added: projectile spawning, projectile asset
+-Update 21/10/20: Added base-game JS script and functionalities
+-Update 14/11/20: Changed game idea and added: projectile spawning, projectile asset
+-Update 18/11/20 : Added images, changed UI and added core functionality 
