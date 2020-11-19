@@ -13,4 +13,4 @@ gameRouter.get('/api/users', userController.getUsers);
 gameRouter.get('/api/users/:id', userController.getUserByID);
 
 //export router
-module.exports = gameRouter;
+module.exports = gameRouter; 
