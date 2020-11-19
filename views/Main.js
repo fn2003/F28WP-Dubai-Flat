@@ -90,6 +90,7 @@ let projSpawn = new projSpawner();
 /*This is to be called when starting projectile spawning 
     ****Call this in the init function**** */
 projSpawn.start();
+/////////////////////////////////////
 
 function keyDownHandler(e) {
     if ((e.keyCode == 39) || (e.keyCode == 68)) {
@@ -105,6 +106,7 @@ document.addEventListener("keydown", keyDownHandler, false);
 function isHit(defender, offender) {
     if (cross(defender, offender)) {
         console.log("Player got hit");
+        
         spawnStop = true;
         gameOver = true;
         console.log("Your score is: " + score)
@@ -133,3 +135,5 @@ function cross(element1, element2) {
     return true;
     
 }
+
+
