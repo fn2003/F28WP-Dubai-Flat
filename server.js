@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
     response.sendFile('Index.html', { root: __dirname });
 });
 
-// middleware     //used for data management
+// middleware     // is used for data management
 app.use(express.json());
 app.use(express.urlencoded());
 
