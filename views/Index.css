@@ -1,0 +1,65 @@
+#Title {
+  background-color: rgb(189, 218, 255);
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  height: 100%;
+  width:100%;
+  display: flex; 
+  justify-content: space-around;
+  border-radius: 10px;
+  
+}
+
+#gameWindow {
+  width: 1100px;
+  position: relative;
+  left: 180px;
+  height: 550px;
+  margin: 20px;
+  overflow: hidden;
+  
+}
+
+#foot
+{
+  border-style: hidden;
+  background-color: rgb(255, 210, 248);
+  height: 50px;
+  border-radius: 10px;
+}
+
+.button{
+  background-color: rgb(255, 255, 255); 
+  padding: 15px;
+  border-style: hidden;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  height: 60px;
+  border-radius: 5px;
+
+}
+
+#container {
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+#map {
+  background-color: #ffebeb;
+  height: 600px;
+  width: 1050px; 
+  
+}
+
+
+#player {
+  position: absolute;
+  left: 100px;
+  /*top: 240px;*/
+  width: 40px;
+  height: 120px
+}
