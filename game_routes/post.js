@@ -11,6 +11,7 @@ gameRouter.post('/api/login', userController.loginCtrl);
 gameRouter.get('/api/users', userController.getUsers);
 //create a route with /api/users/id
 gameRouter.get('/api/users/:id', userController.getUserByID);
-
+//
+gameRouter.get('/api/users/:id', userController.userCreate);
 //export router
 module.exports = gameRouter; 

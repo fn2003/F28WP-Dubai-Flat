@@ -51,4 +51,10 @@ io.sockets.on('connection', function(socket) {
         io.emit('logged', user);
     });
 
+    socket.on('gameOver',function(score){
+        
+
+    });
+
 });
+

@@ -24,9 +24,10 @@ const createDb = function() {
 
         //create table Players
         const sqlUser = "Create table if not exists `leaderboard`.`users`(" +
+            "id int(10) " +
             "`pseudoname` varchar(32) NOT NULL default 'Unkown'," + +
             "`score` int(10) , "+
-            "PRIMARY KEY (`pseudoname`)" +
+            "PRIMARY KEY (`id`)" +
             "); ";
         connection.query(sqlUser, function(err, result) {
             if (err) throw err;
