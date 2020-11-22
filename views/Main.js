@@ -5,6 +5,14 @@ let spawnStop;
 let gameOver = false;
 let score = 0;
 
+// Initial Function
+function init() {
+    //put all starting code here
+    pseudoname = prompt("Please input your username");
+    player.spawn();
+    projSpawn.start();
+}
+
 // Class that spawns the projectiles
 function projSpawner() {
     this.timer = 400;
@@ -103,17 +111,16 @@ function randomize(min, max) {
     return (Math.floor(Math.random() * (max - min) ) + min);
 }
 
+import { Socket } from "socket.io";
 ////////////////////////////////////
 import Player from "./Classes/Player.js"
 
 var player = new Player();
-player.spawn();
 
 //Creates an object from projSpawner
 let projSpawn = new projSpawner();
 /*This is to be called when starting projectile spawning 
     ****Call this in the init function**** */
-projSpawn.start();
 
 function keyDownHandler(e) {
     if ((e.keyCode == 39) || (e.keyCode == 68)) {
