@@ -7,7 +7,7 @@ var pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "root",
-    database: "groupchat",
+    database: "leaderboard",
     debug: true
 });
 
@@ -41,7 +41,7 @@ function getResult(query, callback) {
 }
 
 function find(callback) {
-    const selectUsers = "SELECT * from groupchat.users; ";
+    const selectUsers = "SELECT * from leaderboard.users; ";
     getResult(selectUsers, function(err, rows) {
         if (!err) {
             callback(null, rows);
@@ -53,8 +53,8 @@ function find(callback) {
 
 
 
-function findByEmail(email, callback) {
-    const selectUser = (SQL `SELECT * from groupchat.users where email like ${email};`);
+function findByName(pseudoname, callback) {
+    const selectUser = (SQL `SELECT * from leaderboard.users where pseudoname like ${pseudoname};`);
     getResult(selectUser, function(err, rows) {
         if (!err) {
             callback(null, rows);
@@ -64,19 +64,14 @@ function findByEmail(email, callback) {
     });
 }
 
-function findById(id, callback) {
-    const selectUser = (SQL `SELECT * from groupchat.users where id = ${id};`);
-    getResult(selectUser, function(err, rows) {
-        if (!err) {
-            callback(null, rows);
-        } else {
-            console.log(err);
-        }
-    });
+function insertScore(pseudoname, score, callback) {
+    const insertVal = (SQL `UPDATE leaderboard.users
+    SET score = ${score}
+    WHERE pseudoname = ${pseudoname};`)
 }
 
-function createUser(pseudoname, email, callback) {
-    const insertUser = (SQL `INSERT INTO groupchat.users (pseudoname, email) VALUES (${pseudoname}, ${email}) ;`);
+function createUser(pseudoname, call) {
+    const insertUser = (SQL `INSERT INTO leaderboard.users (pseudoname, score ) VALUES (${pseudoname}, ${score}) ;`);
     getResult(insertUser, function(err, result) {
         if (!err) {
             callback(null, result.affectedRows, result.insertId);
@@ -87,23 +82,11 @@ function createUser(pseudoname, email, callback) {
 }
 
 
-function deleteUser(id, callback) {
-    const insertUser = (SQL `DELETE from groupchat.users where id = ${id};`);
-    getResult(selectUser, function(err, result) {
-        if (!err) {
-            console.log("Number of users inserted: " + result.affectedRows);
-            callback(null, result.affectedRows);
-        } else {
-            console.log(err);
-        }
-    });
-}
 
 
 module.exports = {
     find,
-    findByEmail,
-    findById,
-    createUser,
-    deleteUser
+    findByName,
+    insertScore,
+    createUser
 };

@@ -3,22 +3,22 @@ const userDAO = require('../database/userDAO');
 
 const loginService = (pseudoname, email, callback) => {
     //check if the user is in the DB
-    userDAO.findByEmail(email, function(err, rows) {
+    userDAO.findByName(pseudoname, function(err, rows) {
         if (rows.length == 0) {
             //the user is not in the DB
             console.log("new user, try insert");
             //insert user in the DB
-            userDAO.createUser(pseudoname, email, function(err, affectedRows, insertId) {
+            userDAO.createUser(pseudoname, function(err, affectedRows, insertId) {
                 console.log(`Insertion  from DAO : ${affectedRows}, ${insertId}`);
                 if (affectedRows != 0) {
-                    console.log(`new user ${insertId}, ${pseudoname}, ${email}`);
-                    user = new User(insertId, pseudoname, email);
+                    console.log(`new user ${pseudoname}, ${score}`);
+                    user = new User(pseudoname, score);
                     callback(null, false, user);
                 }
             });
         } else {
-            console.log(`Old user ${rows[0].id}, ${rows[0].pseudoname}, ${rows[0].email}`);
-            user = new User(rows[0].id, rows[0].pseudoname, rows[0].email);
+            console.log(`Old user ${rows[0].pseudoname}, ${rows[0].score}`);
+            user = new User(rows[0].pseudoname, rows[0].score);
             callback(null, true, user);
         }
     });

@@ -2,7 +2,6 @@ const loginCtrl = (request, response, next) => {
     const loginServices = require('../resources/userServices');
 
     let pseudoname = request.body.auser.pseudoname;
-    let email = request.body.auser.email;
 
     loginServices.loginService(pseudoname, email, function(err, oldy, user) {
         console.log("User from login service :" + JSON.stringify(user));
