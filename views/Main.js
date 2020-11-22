@@ -12,23 +12,47 @@ function projSpawner() {
 
 // function to start the projectile spawning. ****Recommened that this function is called in init****
 projSpawner.prototype.start = function() {
+    let timer = this.timer
     spawnStop = false;
-    var spawn = setInterval(function(){
+    setTimeout(spawners, timer);
+
+    
+    function spawners(){
         let check = (randomize(-100, 1100));
-        projectile(check);
-        if(spawnStop)
-            clearInterval(spawn);
-    }, this.timer);
+        if(score < 200)
+            projectile(check,7);
+        else if((score >= 200) && (score < 800)) {
+            timer = 350;
+            projectile(check, 8)
+        }
+        else if((score >= 800) && (score < 1600)) {
+            timer = 300;
+            projectile(check, 9)
+        }
+        else if((score >= 1600) && (score < 2400)){
+            timer = 250;
+            projectile(check, 10)
+        }
+        else if(score > 2400) {
+            timer = 200;
+            projectile(check, 12)
+        }
+        if(!spawnStop) 
+            setTimeout(spawners, timer)
+    }
 }
 
-projSpawner.prototype.stop = function() {
-    clearInterval(spawn);
-}
-
+/*
+function spawners(){
+    clearInterval
+    let check = (randomize(-100, 1100));
+    if(score < 200) 
+        projectile(check, 7);
+    
+}*/
 //projectile is a child function/class of projSpawner
-function projectile(xPos){
+function projectile(xPos, velo){
     //Projectile speed and position accumulator
-    let velocity = 7;
     let current = 0
     let width = $("#gameWindow").width();
 
@@ -53,7 +77,7 @@ function projectile(xPos){
     //updates projectile's position every 10ms
     let interval = setInterval(function(){
         //current keeps track of player position
-        current += velocity;
+        current += velo;
         projectile = projectile.css({"top":current})
         //If position is below game window, interval is stopped and element is deleted
         //Checks collision
