@@ -3,6 +3,7 @@
   border-color: rgb(255, 255, 255);
   border-style: solid;
   height: 100%;
+  top: 20px;
   width:100%;
   display: flex; 
   justify-content: space-around;
@@ -25,12 +26,14 @@
   border-style: hidden;
   background-color: rgb(255, 210, 248);
   height: 50px;
+  top: 50px;
   border-radius: 10px;
 }
 
 .button{
   background-color: rgb(255, 255, 255); 
   padding: 15px;
+  top:  50px;
   border-style: hidden;
   text-align: center;
   display: inline-block;
@@ -41,11 +44,11 @@
 }
 
 #container {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(71, 69, 69);
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(71, 69, 69);
 }
 
 #map {
